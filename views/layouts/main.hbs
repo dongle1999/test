@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/mdbootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/mdbootstrap/css/mdb.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="/vendor/DataTables/datatables.min.css" />
+    <!-- Custom CSS -->
+    <link href="/sass/main.css" rel="stylesheet">
+    {{#block "extra_css"}}
+    {{/block}}
+</head>
+
+<body>
+
+    <!-- Main -->
+    {{#block "main"}}
+    {{/block}}
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="/mdbootstrap/js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/mdbootstrap/js/popper.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/mdbootstrap/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/mdbootstrap/js/mdb.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script type="text/javascript" src="/vendor/DataTables/datatables.min.js"></script>
+    {{#block "extra_js"}}
+    {{/block}}
+
+</body>
+
+</html>

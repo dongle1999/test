@@ -1,0 +1,140 @@
+<!-- Accept booking modal -->
+<form action="/api/tenant/add" method="POST">
+    <div class="modal fade js-accept-booking-modal" tabindex="-1" role="dialog"
+        aria-labelledby="js-accept-booking-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Accept booking</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row m-2">
+                        <div class="col-md-6">
+                            <div class="wrapper">
+                                <h5>Personal information</h5>
+                                <input name="property" type="hidden" value="{{property._id}}" required>
+                                <input class="js-input-booking-id" name="booking" type="hidden" required>
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control js-input-booking-first-name" name="first_name"
+                                        type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control js-input-booking-last-name" name="last_name" type="text"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Birthday</label>
+                                    <input class="form-control js-input-booking-birthday" name="birthday" type="date"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="wrapper mt-4">
+                                <h5>Contact information</h5>
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input class="form-control js-input-booking-mobile" name="mobile" type="number"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control js-input-booking-email" name="email" type="email"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Room information</h5>
+                            <div class="form-group">
+                                <label>Preferred room</label>
+                                <input class="form-control js-input-booking-room" type="text" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Room</label>
+                                <div class="form-group">
+                                    <select class="form-control" name="room" required>
+                                        {{#if rooms}}
+                                        {{#each rooms }}
+                                        <option value="{{_id}}" {{#if tenant}} disabled {{/if}}>{{name}} -
+                                            Floor {{floor}} - {{catalog.name}} - {{catalog.rate}}
+                                        </option>
+                                        {{/each}}
+                                        {{else}}
+                                        <option value="" disabled><span>No rooms available.</span></option>
+                                        {{/if}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Accept</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Decline booking modal -->
+<form action="/api/booking/decline" method="post">
+    <div class="modal fade js-decline-booking-modal" tabindex="-1" role="dialog"
+        aria-labelledby="js-decline-booking-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Decline Booking</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row m-2">
+                        <div class="col-md-6">
+                            <input name="property" type="hidden" value="{{property._id}}" required>
+                            <input class="js-input-booking-id" name="_id" type="hidden" required>
+                            <div class="wrapper">
+                                <h5>Personal information</h5>
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control js-input-booking-first-name" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control js-input-booking-last-name" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Birthday</label>
+                                    <input class="form-control js-input-booking-birthday" disabled>
+                                </div>
+                            </div>
+                            <div class="wrapper mt-4">
+                                <h5>Contact information</h5>
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input class="form-control js-input-booking-mobile" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control js-input-booking-email" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Room information</h5>
+                            <div class="form-group">
+                                <label>Preferred room</label>
+                                <input class="form-control js-input-booking-room" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn red darken-3 text-white mr-2">Confirm decline</button>
+                <button type="button" class="btn btn-custom-cancel text-white m-0" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>

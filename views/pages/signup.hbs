@@ -1,0 +1,54 @@
+{{#extend "main"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "main"}}
+<main class="main main--admin">
+    <section class="main-content w-100">
+        <div class="page page--login d-flex align-items-center bg-custom-primary bg-custom-dark-grey">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 p-0">
+                        <div class="card p-4 bg-custom-secondary text-white">
+                            <h3 class="text-center text-custom-primary">Sign up</h3>
+                            <form class="js-form--user-signup m-4" action="/api/user/signup" method="POST" novalidate>
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input class="form-control js-form-input-username" type="text" name="username"
+                                        required>
+                                    <span class="msg js-username-indicator mt-1"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control js-form-input-email" type="email" name="email" required>
+                                    <span class="msg js-email-indicator mt-1"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="form-control js-form-input-password" type="password" name="password"
+                                        required>
+                                    <span class="msg js-password-indicator mt-1"></span>
+                                </div>
+                                <div class="wrapper">
+                                    <button class="btn btn-custom-primary text-dark btn-block mt-4">Create
+                                        account</button>
+                                </div>
+                            </form>
+                            <div class="d-flex flex-column flex-wrap align-items-center mt-1 text-13">
+                                <span>Already have an account? <a class="link" href="/">Log in</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{{/content}}
+
+{{#content "extra_js"}}
+<script src="/js/form-validation/signup.js"></script>
+{{/content}}
+
+{{/extend}}

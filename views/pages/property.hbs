@@ -1,0 +1,187 @@
+{{#extend "layout-admin"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "page-content"}}
+<div class="page page--property">
+    <div class="container-fluid">
+        <div class="row flex-column pt-2 pr-4 pb-2 pl-4">
+            <div class="header w-100">
+                <h3 class="topbar-title">{{property.name}}</h3>
+                <h6 class="topbar-subtitle">{{property.location}}</h6>
+                <hr>
+            </div>
+            <nav class="topbar-property navbar navbar-expand-lg w-100 z-depth-0 mt-2 p-0">
+                <ul class="nav nav-tabs js-property-nav-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active js-dashboard-tab" data-toggle="tab" href=".js-dashboard-panel"
+                            role="tab" aria-controls="dashboard" aria-selected="true">
+                            <svg class="svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M19 5v2h-4V5h4M9 5v6H5V5h4m10 8v6h-4v-6h4M9 17v2H5v-2h4M21 3h-8v6h8V3zM11 3H3v10h8V3zm10 8h-8v10h8V11zm-10 4H3v6h8v-6z" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-room-tab" data-toggle="tab" href=".js-room-panel" role="tab"
+                            aria-controls="room" aria-selected="true">
+                            <svg class="svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path d="M19 19V4h-4V3H5v16H3v2h12V6h2v15h4v-2h-2zm-6 0H7V5h6v14zm-3-8h2v2h-2z" />
+                            </svg>
+                            <span>Room</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-tenant-tab" data-toggle="tab" href=".js-tenant-panel" role="tab"
+                            aria-controls="tenant" aria-selected="false">
+                            <svg class="svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                            </svg>
+                            <span>Tenant</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-booking-tab" data-toggle="tab" href=".js-booking-panel" role="tab"
+                            aria-controls="booking" aria-selected="false">
+                            <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+                                <g>
+                                    <rect fill="none" height="24" width="24" />
+                                </g>
+                                <g>
+                                    <g />
+                                    <g>
+                                        <path
+                                            d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M21,18.5 c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z" />
+                                        <g>
+                                            <path
+                                                d="M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.7,0-3.24,0.29-4.5,0.83v1.66 C14.13,10.85,15.7,10.5,17.5,10.5z" />
+                                            <path
+                                                d="M13,12.49v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24 C15.8,11.66,14.26,11.96,13,12.49z" />
+                                            <path
+                                                d="M17.5,14.33c-1.7,0-3.24,0.29-4.5,0.83v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26v-1.52 C19.21,14.41,18.36,14.33,17.5,14.33z" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-settings-tab" data-toggle="tab" href=".js-settings-panel" role="tab"
+                            aria-controls="settings" aria-selected="false">
+                            <svg class="svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="row">
+            <div class="col-12 pt-0 pr-4 pb-4 pl-4">
+                <div class="tab-content js-property-tabs pt-4 pb-4">
+                    <div class="tab-pane show active js-dashboard-panel" role="tabpanel"
+                        aria-labelledby="js-dashboard-tab">
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="col-xl-6 p-0 d-flex flex-wrap justify-content-space-between align-content-start"
+                                style="flex: 1;">
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-39 m-0">{{vacantRooms}}</h5>
+                                        <span class="card-text text-13 text-dark">
+                                            Vacant Room(s)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-39 m-0">{{occupiedRooms}}</h5>
+                                        <span class="card-text text-13 text-dark">
+                                            Occupied Room(s)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-39 m-0">{{totalTenants}}</h5>
+                                        <span class="card-text text-13 text-dark">
+                                            Tenant(s)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-39 m-0">{{totalBookings}}</h5>
+                                        <span class="card-text text-13 text-dark">
+                                            Booking(s)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 p-0 d-flex flex-wrap" style="flex: 1;">
+                                <div class="border rounded mb-3 p-4" style="flex: 1;">
+                                    <header class="d-flex justify-content-between align-items-center">
+                                        <span class="font-weight-bold text-uppercase">Catalog</span>
+                                        <button class="btn btn-custom-primary btn-sm m-0" data-toggle="modal"
+                                            data-target=".js-add-catalog-modal">
+                                            Add
+                                        </button>
+                                    </header>
+                                    {{> table_catalog}}
+                                </div>
+                                <div class="border rounded mb-3 p-4" style="flex: 1;">
+                                    <header class="d-flex justify-content-between align-items-center">
+                                        <span class="font-weight-bold text-uppercase">Add-on</span>
+                                        <button class="btn btn-custom-primary btn-sm m-0" data-toggle="modal"
+                                            data-target=".js-add-addOn-modal">
+                                            Add
+                                        </button>
+                                    </header>
+                                    {{> table_add_on}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane js-room-panel" role="tabpanel" aria-labelledby="js-room-tab">
+                        {{> table_room}}
+                    </div>
+                    <div class="tab-pane fade js-tenant-panel" role="tabpanel" aria-labelledby="js-tenant-tab">
+                        {{> table_tenant}}
+                    </div>
+                    <div class="tab-pane fade js-booking-panel" role="tabpanel" aria-labelledby="js-booking-tab">
+                        <input id="booking_id" type="hidden" value="/booking/{{property.bookingId}}">
+                        {{> table_booking}}
+                    </div>
+                    <div class="tab-pane fade js-settings-panel" role="tabpanel" aria-labelledby="js-settings-tab">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modals -->
+{{> modals_catalog}}
+{{> modals_add_on}}
+{{> modals_room}}
+{{> modals_tenant}}
+{{> modals_booking}}
+{{/content}}
+
+{{#content "extra_js"}}
+<script src="/js/property/DataTables.js"></script>
+<script src="/js/property/script.js"></script>
+{{/content}}
+
+{{/extend}}

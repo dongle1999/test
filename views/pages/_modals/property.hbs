@@ -1,0 +1,98 @@
+<!-- Add property modal -->
+<form action="/api/property/add" method="POST">
+    <div class="modal fade js-add-property-modal" tabindex="-1" role="dialog" aria-labelledby="js-add-property-modal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Property</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <label for="name">Name</label>
+                        <input class="form-control" name="name" id="name" type="text" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="location">Location</label>
+                        <input class="form-control" name="location" id="location" type="text" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Add</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Update property modal -->
+<form action="/api/property/edit" method="POST">
+    <div class="modal fade js-update-property-modal" tabindex="-1" role="dialog"
+        aria-labelledby="js-update-property-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Property</h4>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control js-input-property-id" name="_id" type="hidden" required>
+                    <div class="form-group mb-3">
+                        <label>Name</label>
+                        <input class="form-control js-input-property-name" name="name" type="text" value="placeholder"
+                            required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Location</label>
+                        <input class="form-control js-input-property-location" name="location" type="text"
+                            value="placeholder" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Save</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Delete property modal -->
+<form action="/api/property/delete" method="POST">
+    <div class="modal fade js-delete-property-modal" tabindex="-1" role="dialog"
+        aria-labelledby="js-delete-property-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Property</h4>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control js-input-property-id" name="_id" type="hidden" required>
+                    <div class="form-group mb-3">
+                        <label>Name</label>
+                        <input class="form-control js-input-property-name" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Location</label>
+                        <input class="form-control js-input-property-location" disabled>
+                    </div>
+                    <div class="mt-4 p-1">
+                        <div class="d-flex flex-column">
+                            <span>Note:</span>
+                            <p class="text-13">
+                                Properties that have data cannot be deleted.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn red darken-3 text-white mr-2">Confirm deletion</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

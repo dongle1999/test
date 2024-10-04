@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the topbar of the site/application.
+// -----------------------------------------------------------------------------
+
+.topbar {
+    display        : flex;
+    justify-content: flex-end;
+    width          : 100%;
+    padding        : 15px 50px !important;
+    box-shadow     : none !important;
+
+    .username {
+        font-size: $text-13 !important;
+    }
+}
+
+.topbar-property {
+    .nav-tabs {
+        width                  : 100%;
+        border                 : 0 !important;
+        border-top-left-radius : 0.125rem;
+        border-top-right-radius: 0.125rem;
+        background-color       : $dark-grey !important;
+    }
+
+    .nav-link {
+        padding  : 16px;
+        color    : $light !important;
+        font-size: $text-13 !important;
+        border   : 0 !important;
+    }
+
+    .nav-link svg {
+        display: none;
+    }
+
+    .nav-link.active {
+        color      : $primary !important;
+        font-weight: bold !important;
+        background : none !important;
+    }
+
+    .nav-link:hover {
+        text-decoration: none !important;
+    }
+}

@@ -1,0 +1,23 @@
+.upload {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    border         : 2px dashed lightgray;
+
+    .upload-input {
+        display: none;
+    }
+
+    .upload-label {
+        padding: 16px;
+        cursor : pointer;
+    }
+
+    .upload-preview {
+        width              : 220px;
+        height             : 220px;
+        background-size    : cover;
+        background-position: center;
+        background-repeat  : no-repeat;
+    }
+}

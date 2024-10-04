@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn-custom-primary {
+    background-color: $primary !important;
+}
+
+.btn-custom-dark-grey {
+    background-color: $dark-grey !important;
+}
+
+.btn-custom-cancel {
+    color           : #000000 !important;
+    background-color: none !important;
+    border          : none !important;
+    outline         : none !important;
+    box-shadow      : none !important;
+}

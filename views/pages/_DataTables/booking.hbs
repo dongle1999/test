@@ -1,0 +1,43 @@
+<div class="border rounded p-4">
+    <div class="table-responsive-md text-nowrap">
+        <table class="table js-table-booking" style="width: 100%;">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Preferred Room</th>
+                    <th class="text-right">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each bookings}}
+                <tr>
+                    <td>{{last_name}}, {{first_name}}</td>
+                    <td>{{birthday}}</td>
+                    <td>{{mobile}}</td>
+                    <td>{{email}}</td>
+                    <td>{{catalog.name}}</td>
+                    <td class="text-right">
+                        <button type="button"
+                            class="btn btn-sm green darken-2 text-white m-0 mr-2 z-depth-0 js-accept-booking-button"
+                            data-id="{{_id}}" data-firstname="{{first_name}}" data-lastname="{{last_name}}"
+                            data-birthday="{{birthday}}" data-mobile="{{mobile}}" data-email="{{email}}"
+                            data-room="{{catalog.name}}" data-toggle="modal" data-target=".js-accept-booking-modal">
+                            accept
+                        </button>
+                        <button type="button"
+                            class="btn btn-sm  red darken-3 text-white m-0 z-depth-0 js-decline-booking-button"
+                            data-id="{{_id}}" data-firstname="{{first_name}}" data-lastname="{{last_name}}"
+                            data-birthday="{{birthday}}" data-mobile="{{mobile}}" data-email="{{email}}"
+                            data-room="{{catalog.name}}" data-toggle="modal" data-target=".js-decline-booking-modal">
+                            decline
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

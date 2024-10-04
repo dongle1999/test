@@ -1,0 +1,53 @@
+<div class="border rounded p-4">
+    <div class="table-responsive text-nowrap">
+        <table class="table js-table-room" style="width: 100%;">
+            <thead class="table-dark">
+                <tr>
+                    <th>Room</th>
+                    <th>Floor</th>
+                    <th>Catalog</th>
+                    <th>Rate</th>
+                    <th>Status</th>
+                    <th class="text-right">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each rooms}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{floor}}</td>
+                    <td>{{catalog.name}}</td>
+                    <td>Php {{catalog.rate}}</td>
+                    <td>
+                        {{#if tenant}}
+                        <div class="btn btn-sm red darken-3 m-0 text-white">
+                            Occupied
+                        </div>
+                        {{else}}
+                        <div class="btn btn-sm green darken-2 m-0 text-white">
+                            Vacant
+                        </div>
+                        {{/if}}
+                    </td>
+                    <td class="text-right">
+                        <button class="btn btn-sm blue darken-2 text-white m-0 mr-2 z-depth-0 js-update-room-button"
+                            data-id="{{_id}}" data-name="{{name}}" data-floor="{{floor}}" data-catalog="{{catalog}}"
+                            data-catalogid="{{catalog._id}}" data-catalogname="{{catalog.name}}"
+                            data-catalograte="{{catalog.rate}}" data-toggle="modal" data-target=".js-update-room-modal">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm red darken-3 text-white m-0 z-depth-0 js-delete-room-button"
+                            data-id="{{_id}}" data-name="{{name}}" data-tenant="{{tenant._id}}" data-floor="{{floor}}"
+                            data-catalog="{{catalog}}" data-catalogid="{{catalog._id}}"
+                            data-catalogname="{{catalog.name}}" data-catalograte="{{catalog.rate}}"
+                            data-status="{{#if tenant}}Occupied{{else}}Vacant{{/if}}" data-toggle="modal"
+                            data-target=".js-delete-room-modal">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

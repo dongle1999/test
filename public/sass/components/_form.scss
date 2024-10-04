@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form component.
+// -----------------------------------------------------------------------------
+
+label {
+    margin-bottom: 0.25rem !important;
+    font-size    : $text-13 !important;
+}
+
+.form-control {
+    border-radius: 0.125rem !important;
+}
+
+.form-control:focus {
+    border-color: $primary !important;
+    box-shadow  : 0 0 0 0.2rem rgba(235, 94, 40, 0.25) !important;
+}
+
+.form-group {
+    margin-bottom: 0.5rem !important;
+}

@@ -1,0 +1,149 @@
+{{#extend "layout"}}
+
+{{#content "extra_css"}}{{/content}}
+
+{{#content "content"}}
+
+<main class="main main--admin">
+    <section class="main-content w-100">
+        <div class="page page--booking">
+            <div class="container">
+                <div class="row">
+                    <form class="d-flex flex-column w-100 js-form--booking"
+                        action="/api/booking/list/{{property.bookingId}}" method="post" novalidate>
+                        <div class="w-100">
+                            <div class="d-flex flex-column pt-4 pr-4 pb-2 pl-4">
+                                <h3 class="mb-0 custom-color-1">{{property.name}}</h3>
+                                <span class="font-italic" style="font-size: 14px;">{{property.location}}</span>
+                            </div>
+                            <!-- First tab -->
+                            <div class="m-0 p-0 js-ftab">
+                                <div class="col-md-6 p-4">
+                                    <h4 class="mb-3 font-weight-bold">Personal information</h4>
+                                    <h6 class="mb-3 font-weight-normal font-italic">May we know about you?</h6>
+                                    <div class="form-group mb-2">
+                                        <label>First name</label>
+                                        <input class="form-control js-form-input-firstName" type="text"
+                                            name="first_name" />
+                                        <span class="msg js-firstName-indicator mt-1"></span>
+                                    </div>
+
+                                    <div class="form-group mb-2">
+                                        <label>Last name</label>
+                                        <input class="form-control js-form-input-lastName" name="last_name"
+                                            type="text" />
+                                        <span class="msg js-lastName-indicator mt-1"></span>
+                                    </div>
+
+                                    <div class="form-group mb-2">
+                                        <label>Birthday</label>
+                                        <input class="form-control js-form-input-birthday" name="birthday"
+                                            type="date" />
+                                        <span class="msg js-birthday-indicator mt-1"></span>
+                                    </div>
+
+                                    <h6 class="mt-4 mb-3 font-weight-normal font-italic">How can we contact
+                                        you?</h6>
+
+                                    <div class="form-group mb-2">
+                                        <label>Mobile</label>
+                                        <input class="form-control js-form-input-mobile" name="mobile" type="number" />
+                                        <span class="msg js-mobile-indicator mt-1"></span>
+                                    </div>
+
+                                    <div class="form-group mb-2">
+                                        <label>Email</label>
+                                        <input class="form-control js-form-input-email" name="email" type="email" />
+                                        <span class="msg js-email-indicator mt-1"></span>
+                                    </div>
+
+                                    <button type="button" class="btn btn-submit mt-4 m-0 js-ftab-btn-next">Next</button>
+                                </div>
+                            </div>
+                            <!-- Second tab -->
+                            <div class="d-none rounded js-stab">
+                                <div class="col-md-6 d-flex flex-column p-4">
+                                    <h4 class="mb-3 font-weight-bold">Room information</h4>
+                                    <h6 class="mb-3 font-weight-normal">Choose your preferred
+                                        room type</h6>
+                                    <div class="msg mb-2 js-room-indicator"></div>
+                                    {{#each catalogs}}
+                                    <div class="form-group mb-0">
+                                        <label class="radio-label w-100" for="{{name}}" id="label_{{_id}}"
+                                            style="cursor: pointer;" onclick="catalogSelected(this)"
+                                            data-name="{{name}}" data-rate="{{rate}}">
+                                            <div class="card mb-2 rounded-0 z-depth-0 text-dark custom-bg-4">
+                                                <div class="card-body">
+                                                    <h5 class="card-title text-white">{{name}}</h5>
+                                                    <p class="card-text mb-0 text-white">P{{rate}}/month</p>
+                                                    <input class="js-form-input-room" style="visibility: hidden;"
+                                                        type="radio" name="catalog" id="{{name}}" value="{{_id}}" />
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    {{/each}}
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <button type="button"
+                                            class="btn btn-back m-0 mr-3 js-ftab-btn-prev">Previous</button>
+                                        <button type="button"
+                                            class="btn btn-submit m-0 js-stab-btn-next">Review</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Third tab -->
+                            <div class="d-none rounded js-ttab">
+                                <div class="d-flex flex-column p-4">
+                                    <h4 class="mb-3 font-weight-bold">Booking summary</h4>
+                                    <h6 class="mb-3 font-weight-normal">Personal information</h6>
+                                    <table class="table table-borderless" style="background-color: #6c7789 !important;">
+                                        <tbody>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td class="js-td-name"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Birthday</td>
+                                                <td class="js-td-birthday"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile</td>
+                                                <td class="js-td-mobile"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td class="js-td-email"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h6 class="mb-3 font-weight-normal">Room information</h6>
+                                    <div class="col-md-6 p-0">
+                                        <div class="card mb-2 rounded-0 z-depth-0 custom-bg-5 w-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-white js-catalog-name"></h5>
+                                                <p class="card-text mb-0 text-white js-catalog-rate"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <button type="button"
+                                            class="btn btn-back m-0 mr-3 js-ttab-btn-prev">Previous</button>
+                                        <button type="submit" class="btn btn-submit m-0">Confirm booking</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{/content}}
+
+{{#content "extra_js"}}
+<script src="/js/form-validation/booking.js"></script>
+{{/content}}
+
+{{/extend}}

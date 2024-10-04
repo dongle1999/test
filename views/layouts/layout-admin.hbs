@@ -1,0 +1,115 @@
+{{#extend "main"}}
+{{#content "main"}}
+<main class="main main--admin">
+    <!-- Sidebar -->
+    <nav class="sidebar navbar navbar-expand-lg bg-dark">
+        <div class="d-flex align-items-center w-100">
+            <div class="sidebar-header m-4">
+                <a class="sidebar-title" href="/">DMS</a>
+            </div>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target=".js-navbar-collapse" aria-controls="js-navbar-collapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <svg class="svg svg--white svg--toggler m-0" viewBox="0 0 24 24">
+                    <rect fill="none" height="24" width="24" />
+                    <path d="M21,8H3V4h18V8z M21,10H3v4h18V10z M21,16H3v4h18V16z" />
+                </svg>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse align-items-start w-100  mt-2">
+            <div class="navbar-nav flex-column w-100">
+                <div class="sidebar-menu">
+                    menu
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="/">
+                        <svg class="svg mr-3" viewBox="0 0 24 24">
+                            <g>
+                                <rect fill="none" height="24" width="24" />
+                            </g>
+                            <g>
+                                <path
+                                    d="M17,11V3H7v4H3v14h8v-4h2v4h8V11H17z M7,19H5v-2h2V19z M7,15H5v-2h2V15z M7,11H5V9h2V11z M11,15H9v-2h2V15z M11,11H9V9h2 V11z M11,7H9V5h2V7z M15,15h-2v-2h2V15z M15,11h-2V9h2V11z M15,7h-2V5h2V7z M19,19h-2v-2h2V19z M19,15h-2v-2h2V15z" />
+                            </g>
+                        </svg>
+                        Property
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link d-flex align-items-center" data-toggle="collapse" href=".js-collapse-account"
+                        role="button" aria-expanded="false" aria-controls="js-collapse-account">
+                        <svg class="svg mr-3" viewBox="0 0 24 24">
+                            <g>
+                                <rect fill="none" height="24" width="24" />
+                            </g>
+                            <g>
+                                <g>
+                                    <circle cx="17" cy="15.5" fill-rule="evenodd" r="1.12" />
+                                    <path
+                                        d="M17,17.5c-0.73,0-2.19,0.36-2.24,1.08c0.5,0.71,1.32,1.17,2.24,1.17 s1.74-0.46,2.24-1.17C19.19,17.86,17.73,17.5,17,17.5z"
+                                        fill-rule="evenodd" />
+                                    <path
+                                        d="M18,11.09V6.27L10.5,3L3,6.27v4.91c0,4.54,3.2,8.79,7.5,9.82 c0.55-0.13,1.08-0.32,1.6-0.55C13.18,21.99,14.97,23,17,23c3.31,0,6-2.69,6-6C23,14.03,20.84,11.57,18,11.09z M11,17 c0,0.56,0.08,1.11,0.23,1.62c-0.24,0.11-0.48,0.22-0.73,0.3c-3.17-1-5.5-4.24-5.5-7.74v-3.6l5.5-2.4l5.5,2.4v3.51 C13.16,11.57,11,14.03,11,17z M17,21c-2.21,0-4-1.79-4-4c0-2.21,1.79-4,4-4s4,1.79,4,4C21,19.21,19.21,21,17,21z"
+                                        fill-rule="evenodd" />
+                                </g>
+                            </g>
+                        </svg>
+                        Account
+                    </a>
+                    <div class="collapse js-collapse-account mt-0 mr-3 mb-3 ml-3 p-0">
+                        <a class="nav-link d-flex align-items-center" href="/account/profile">
+                            <svg class="svg mr-3" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z" />
+                            </svg>
+                            Edit profile
+                        </a>
+                        <a class="nav-link d-flex align-items-center" href="/account/security">
+                            <svg class="svg mr-3" viewBox="0 0 24 24">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z" />
+                                    <path d="M0 0h24v24H0V0z" opacity=".87" />
+                                </g>
+                                <path
+                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                            </svg>
+                            Change password
+                        </a>
+                        <form class="form form--user-logout mt-2" action="/api/user/logout" method="POST">
+                            <button class="btn btn-block red darken-3 text-white">
+                                Log out
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="main-content d-flex flex-column">
+        <!--Topbar -->
+        <nav class="topbar navbar navbar-expand-md">
+            <div class="d-flex justify-content-space-between align-items-center">
+                <span class="username mr-2">{{user.username}}</span>
+                <div class="avatar avatar--small avatar--circle" {{#if user.avatar}}
+                    style="background-image: url('data:image/png;base64,{{user.avatar.data}}');" {{/if}}>
+                </div>
+            </div>
+        </nav>
+        {{#block "page-content"}}
+        {{/block}}
+        <footer class="footer-custom">
+            <div class="copyright-notice">
+                <span>Designed and Developed by <a class="developer" href="https://github.com/guyfrommilkyway">Almer
+                        Tampus</a></span>
+                <span>Copyright © DMS 2021</span>
+                <span>All Rights Reserved</span>
+            </div>
+        </footer>
+    </section>
+</main>
+
+{{/content}}
+{{/extend}}

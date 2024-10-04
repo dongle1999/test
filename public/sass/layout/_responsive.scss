@@ -1,0 +1,95 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the responsiveness of the site/application.
+// -----------------------------------------------------------------------------
+
+@media screen and (max-width: 992px) {
+    .main.main--admin {
+        flex-direction: column !important;
+
+        .sidebar {
+            max-width: 100% !important;
+
+            .sidebar-header {
+                margin: 12px !important;
+            }
+
+            .navbar-collapse {
+                margin-bottom: 32px !important;
+            }
+        }
+
+        .topbar {
+            display: none;
+        }
+
+        .page {
+            padding: 50px 20px !important;
+
+            .row {
+                padding: 0 !important;
+            }
+        }
+
+        .page.page--profile {
+            .wrapper--profile {
+                flex-direction: column-reverse !important;
+            }
+        }
+
+        .page.page--property {
+            .col-12 {
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main.main--admin {
+        .topbar-property {
+            .nav-tabs {
+                justify-content: center !important;
+            }
+
+            .nav-item {
+                flex: 1;
+            }
+
+            .nav-link {
+                display        : flex !important;
+                justify-content: center !important;
+                align-items    : center !important;
+                margin         : 0;
+            }
+
+            .nav-link svg {
+                display: block !important;
+                width  : 24px;
+                height : 24px;
+                margin : 0 !important;
+                padding: 0 !important;
+                fill   : #FFFFFF !important;
+            }
+
+            .nav-link span {
+                display: none !important;
+            }
+        }
+
+        .page {
+            padding: 20px !important;
+        }
+
+        .page.page--login {
+            form {
+                margin: 16px 0 !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .card-custom {
+        margin-right: 0 !important;
+    }
+}

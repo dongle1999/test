@@ -1,0 +1,30 @@
+{{#extend "main"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "main"}}
+<main class="main main--admin">
+    <section class="main-content w-100">
+        <div class="page page--page-not-found m-0 p-0">
+            <div class="container-fluid">
+                <div class="row flex-column">
+                    <div class="d-flex flex-column m-4 p-2">
+                        <span class="font-weight-bold" style="font-size: 30px;">404.</span>
+                        <span>Opps! That's an error.</span>
+                        <span>The page you requested was not found on this server.</span>
+                    </div>
+                    <div class="m-4 p-2">
+                        <a class="btn btn-submit m-0" href="/">Back to home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{{/content}}
+
+{{#content "extra_js"}}
+{{/content}}
+
+{{/extend}}

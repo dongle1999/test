@@ -1,0 +1,29 @@
+<!-- Update profile photo modal -->
+<form class="form form--update-user-avatar" action="/api/user/profile/avatar/update" method="POST"
+    enctype="multipart/form-data">
+    <div class="modal fade js-edit-profile-photo-modal" tabindex="-1" role="dialog" aria-labelledby="editProfileModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Click photo to upload</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="upload">
+                        <input class="upload-input" name="avatar" id="upload-input" type="file"
+                            accept="image/png, image/jpeg, image/jpg" onchange="uploadPreview(this);" required />
+                        <label class="upload-label" for="upload-input">
+                            <div class="upload-preview js-upload-preview" {{#if user.avatar}}
+                                style="background-image: url('data:image/png;base64,{{user.avatar.data}}');" {{/if}}>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom-cancel" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-custom-primary">Set new profile photo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the modal component.
+// -----------------------------------------------------------------------------
+
+.modal {
+    .modal-content {
+        border-radius: 3px;
+        background   : none !important;
+    }
+
+    .modal-header {
+        padding         : 1rem 1.5rem;
+        color           : #FFFFFF !important;
+        background-color: $secondary !important;
+        border          : none !important;
+    }
+
+    .modal-body {
+        padding         : 1.5rem;
+        background-color: #FFFFFF !important;
+    }
+
+    .modal-footer {
+        display        : flex;
+        justify-content: flex-start;
+        padding        : 1rem 1.5rem;
+        background     : #FFFFFF !important;
+        border         : none !important;
+    }
+}

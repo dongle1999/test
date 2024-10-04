@@ -1,0 +1,111 @@
+<!-- Add add-on modal -->
+<form action="/api/addOn/add" method="POST">
+    <div class="modal fade js-add-addOn-modal" tabindex="-1" role="dialog" aria-labelledby="js-add-addOn-modal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Add-on</h4>
+                </div>
+                <div class="modal-body">
+                    <input name="property" type="hidden" value="{{property._id}}" required>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" name="name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Rate</label>
+                        <input class="form-control" name="rate" type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Type <span class="font-italic">(One-time, monthly, etc.)</span></label>
+                        <input class="form-control" name="type" type="text" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Add</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Update add-on modal -->
+<form action="/api/addOn/update" method="POST">
+    <div class="modal fade js-update-addOn-modal" tabindex="-Type1" role="dialog"
+        aria-labelledby="js-update-addOn-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Add-on</h4>
+                </div>
+                <div class="modal-body">
+                    <input name="property" type="hidden" value="{{property._id}}" required>
+                    <input class="js-input-addOn-id" name="_id" type="hidden" required>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control js-input-addOn-name" name="name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Rate</label>
+                        <input class="form-control js-input-addOn-rate" name="rate" type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Type <span class="font-italic">(One-time, monthly, etc.)</span></label>
+                        <input class="form-control js-input-addOn-type" name="type" type="text" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Save</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Delete add-on modal -->
+<form action="/api/addOn/delete" method="POST">
+    <div class="modal fade js-delete-addOn-modal" tabindex="-1" role="dialog" aria-labelledby="js-delete-addOn-modal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Add-on</h4>
+                </div>
+                <div class="modal-body">
+                    <input name="property" type="hidden" value="{{property._id}}" required>
+                    <input class="js-input-addOn-id" name="_id" type="hidden" required>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control js-input-addOn-name" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Rate</label>
+                        <input class="form-control js-input-addOn-rate" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Type</label>
+                        <input class="form-control js-input-addOn-type" disabled>
+                    </div>
+                    <div class="mt-4 p-1">
+                        <div class="d-flex flex-column">
+                            <span>Note:</span>
+                            <p class="text-13">
+                                Add-ons that are currently being used cannot be deleted.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn red darken-3 text-white mr-2">Confirm deletion</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

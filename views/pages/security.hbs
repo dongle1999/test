@@ -1,0 +1,40 @@
+{{#extend "layout-admin"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "page-content"}}
+<div class="page page--profile">
+    <div class="container-fluid">
+        <div class="row flex-column p-4">
+            <div class="header w-100">
+                <h3>Security</h3>
+                <hr>
+            </div>
+            <div class="col-12 p-0">
+                <form class="form form--user-password--update" action="/api/user/profile/password/update" method="POST">
+                    <input name="email" type="hidden" value="{{user.email}}" required>
+                    <div class="form-group">
+                        <label>Current password</label>
+                        <input class="form-control" name="currentPassword" type="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>New password</label>
+                        <input class="form-control" name="newPassword" type="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm password</label>
+                        <input class="form-control" name="confirmNewPassword" type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom-primary m-0 mt-3">Update password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{/content}}
+
+{{#content "extra_js"}}
+{{/content}}
+
+{{/extend}}

@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Typography
+$Montserrat-Light  : Montserrat-Light;
+$Montserrat-Regular: Montserrat-Regular;
+$Montserrat-Bold   : Montserrat-Bold;
+
+// Color Palette
+$primary       : #EB5E28;
+$primary-darker: #CD4813;
+$secondary     : #252422;
+$dark-grey     : #403D39;
+$light-grey    : #CCC5B9;
+$light         : #FFFCF2;
+
+// Typesize
+$text-8  : 0.5rem;
+$text-10 : 0.625rem;
+$text-13 : 0.812rem;
+$text-16 : 1rem;
+$text-20 : 1.25rem;
+$text-25 : 1.562rem;
+$text-31 : 1.938rem;
+$text-39 : 2.438rem;
+$text-49 : 3.062rem;
+$text-61 : 3.812rem;
+$text-76 : 4.75rem;
+$text-95 : 5.938rem;

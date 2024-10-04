@@ -1,0 +1,30 @@
+{{#extend "layout-admin"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "page-content"}}
+<div class="page page--property-management">
+    <div class="container-fluid">
+        <div class="row flex-column p-4">
+            <div class="header w-100">
+                <h3>Property</h3>
+                <hr>
+            </div>
+            <div class="col-12 mt-2 p-0">
+                {{> table_property}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+{{> modals_property}}
+
+{{/content}}
+
+{{#content "extra_js"}}
+<script src="/js/management/property.js"></script>
+{{/content}}
+
+{{/extend}}

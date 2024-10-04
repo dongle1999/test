@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the layout of the site/application.
+// -----------------------------------------------------------------------------
+
+.main {
+    display       : flex;
+    flex-direction: row;
+    align-items   : stretch;
+    width         : 100%;
+}
+
+.main-content {
+    width: 100%;
+}

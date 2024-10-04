@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains all color styles
+// -----------------------------------------------------------------------------
+
+// Colors
+.text-custom-primary {
+    color: $primary !important;
+}
+
+.text-custom-primary-darker {
+    color: $primary-darker !important;
+}
+
+.text-custom-secondary {
+    color: $secondary !important;
+}
+
+.text-custom-dark-grey {
+    color: $dark-grey !important;
+}
+
+.text-custom-light-grey {
+    color: $light-grey !important;
+}
+
+.text-custom-light {
+    color: $light !important;
+}
+
+// Background-colors
+.bg-custom-primary {
+    background-color: $primary !important;
+}
+
+.bg-custom-primary-darker {
+    background-color: $primary-darker !important;
+}
+
+.bg-custom-secondary {
+    background-color: $secondary !important;
+}
+
+.bg-custom-dark-grey {
+    background-color: $dark-grey !important;
+}
+
+.bg-custom-light-grey {
+    background-color: $light-grey !important;
+}
+
+.bg-custom-light {
+    background-color: $light !important;
+}

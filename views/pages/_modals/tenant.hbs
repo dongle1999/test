@@ -1,0 +1,210 @@
+<!-- Add tenant modal -->
+<form action="/api/tenant/add" method="POST">
+    <div class="modal fade js-add-tenant-modal" tabindex="-1" role="dialog" aria-labelledby="js-add-tenant-modal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Tenant</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row m-2">
+                        <div class="col-md-6">
+                            <div class="wrapper">
+                                <h5>Personal information</h5>
+                                <input name="property" type="hidden" value="{{property._id}}" required>
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control" name="first_name" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control" name="last_name" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Birthday</label>
+                                    <input class="form-control" name="birthday" type="date" required>
+                                </div>
+                            </div>
+                            <div class="wrapper mt-4">
+                                <h5>Contact information</h5>
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input class="form-control" name="mobile" type="number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control" name="email" type="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Room information</h5>
+                            <div class="form-group">
+                                <label>Room</label>
+                                <div class="form-group">
+                                    <select class="form-control" name="room" required>
+                                        {{#if rooms}}
+                                        {{#each rooms }}
+                                        <option value="{{_id}}" {{#if tenant}} disabled {{/if}}>{{name}} -
+                                            Floor {{floor}} - {{catalog.name}} - {{catalog.rate}}
+                                        </option>
+                                        {{/each}}
+                                        {{else}}
+                                        <option value="" disabled><span>No rooms available.</span></option>
+                                        {{/if}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Add</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Update tenant modal -->
+<form action="/api/tenant/update" method="POST">
+    <div class="modal fade js-update-tenant-modal" tabindex="-1" role="dialog" aria-labelledby="js-update-tenant-modal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Tenant</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row m-2">
+                        <div class="col-md-6">
+                            <input name="property" type="hidden" value="{{property._id}}" required>
+                            <input class="js-input-tenant-id" name="_id" type="hidden" required>
+                            <input class="js-input-tenant-current-room" name="currentRoom" type="hidden" required>
+                            <div class="wrapper">
+                                <h5>Personal information</h5>
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control js-input-tenant-first-name" name="first_name" type="text"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control js-input-tenant-last-name" name="last_name" type="text"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Birthday</label>
+                                    <input class="form-control js-input-tenant-birthday" name="birthday" type="date"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="wrapper mt-4">
+                                <h5>Contact information</h5>
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input class="form-control js-input-tenant-mobile" name="mobile" type="text"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control js-input-tenant-email" name="email" type="email"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Room information</h5>
+                            <div class="form-group">
+                                <label>Room</label>
+                                <div class="form-group">
+                                    <select class="form-control js-select-tenant-room" name="room" required>
+                                        {{#each rooms }}
+                                        <option {{#if tenant}}class="occupied" disabled{{/if}} value="{{_id}}">
+                                            {{name}} -
+                                            Floor {{floor}} - {{catalog.name}} - {{catalog.rate}}
+                                        </option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-primary m-0 mr-2">Save</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Delete tenant modal -->
+<form action="/api/tenant/delete" method="POST">
+    <div class="modal fade js-delete-tenant-modal" tabindex="-1" role="dialog" aria-labelledby="js-delete-tenant-modal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Tenant</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row m-2">
+                        <div class="col-md-6">
+                            <input name="property" type="hidden" value="{{property._id}}" required>
+                            <input class="js-input-tenant-id" name="_id" type="hidden" required>
+                            <input class="js-input-tenant-current-room" name="room" type="hidden" required>
+                            <div class="wrapper">
+                                <h5>Personal information</h5>
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control js-input-tenant-first-name" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control js-input-tenant-last-name" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Birthday</label>
+                                    <input class="form-control js-input-tenant-birthday" disabled>
+                                </div>
+                            </div>
+                            <div class="wrapper mt-4">
+                                <h5>Contact information</h5>
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input class="form-control js-input-tenant-mobile" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control js-input-tenant-email" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <header>
+                                <h5>Room information</h5>
+                            </header>
+                            <section>
+                                <div class="form-group">
+                                    <label>Room</label>
+                                    <input class="form-control js-input-tenant-room" disabled>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn red darken-3 text-white mr-2">Confirm deletion</button>
+                    <button type="button" class="btn btn-custom-cancel text-white m-0"
+                        data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

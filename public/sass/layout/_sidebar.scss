@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the sidebar of the site/application.
+// -----------------------------------------------------------------------------
+
+.sidebar {
+    display       : flex;
+    flex-direction: column;
+    align-content : flex-start;
+    width         : 100%;
+    max-width     : 280px;
+    margin        : 0 !important;
+    padding       : 0 !important;
+    box-shadow    : none !important;
+
+    .sidebar-title {
+        font-size      : $text-25 !important;
+        text-transform : uppercase;
+        text-decoration: none !important;
+    }
+
+    .sidebar-menu {
+        padding       : 4px 25px !important;
+        color         : $light !important;
+        font-size     : $text-10 !important;
+        text-transform: uppercase !important;
+    }
+
+    .nav-link {
+        padding       : 12px 25px !important;
+        color         : $light !important;
+        font-size     : $text-13 !important;
+        text-transform: capitalize;
+    }
+
+    .nav-link:hover {
+        text-decoration: none !important;
+    }
+}

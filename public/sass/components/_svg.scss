@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the svg component.
+// -----------------------------------------------------------------------------
+
+.svg {
+    width : 20px;
+    height: 20px;
+    fill  : $light-grey !important;
+}
+
+.svg--large {
+    width : 60px;
+    height: 60px;
+}
+
+.svg--dark {
+    fill: $dark-grey !important;
+}
+
+.svg--white {
+    fill: #FFFFFF !important;
+}
+
+.svg--toggler {
+    width : 28px;
+    height: 28px;
+}

@@ -1,0 +1,71 @@
+{{#extend "layout-admin"}}
+
+{{#content "extra_css"}}
+{{/content}}
+
+{{#content "page-content"}}
+<div class="page page--profile">
+    <div class="container-fluid">
+        <div class="row flex-column p-4">
+            <div class="header w-100">
+                <h3>Profile</h3>
+                <hr>
+            </div>
+            <div class="wrapper--profile d-flex flex-wrap">
+                <div class="col-lg-6 p-0">
+                    <form class="form form--user-profile--update w-100" action="/api/user/profile/info/update"
+                        method="POST">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input class="form-control" name="username" type="text" value="{{user.username}}" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control" name="first_name" type="text"
+                                        value="{{user.first_name}}">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control" name="last_name" type="text" value="{{user.last_name}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile</label>
+                            <input class="form-control" name="mobile" type="text" value="{{user.mobile}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" name="email" type="email" value="{{user.email}}" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom-primary m-0 mt-3">Save changes</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 pt-3 pr-0 pb-3 pl-0">
+                    <div class="d-flex flex-column">
+                        <div class="avatar avatar--large rounded" {{#if user.avatar}}
+                            style="background-image: url('data:image/png;base64,{{user.avatar.data}}');" {{/if}}>
+                            <button class="btn avatar-button p-2" data-toggle="modal"
+                                data-target=".js-edit-profile-photo-modal">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+{{> modals_profile_photo}}
+
+{{/content}}
+
+{{#content "extra_js"}}
+<script src="/js/upload-preview.js"></script>
+{{/content}}
+
+{{/extend}}
